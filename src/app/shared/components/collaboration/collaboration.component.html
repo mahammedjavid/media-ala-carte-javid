@@ -1,0 +1,22 @@
+<section class="collab">
+  <div class="collab__header" #collabHeader>
+    <div class="collab__label">POWERING COLLABORATION ACROSS MEDIA</div>
+    <h2 class="collab__title">Collaborate. Elevate. Succeed</h2>
+    <div class="collab__subtitle">Empower advertisers, agencies, and media owners to work seamlessly.</div>
+    <button class="collab__cta">Meet the Experts</button>
+  </div>
+  <div class="collab__stats-bar" #collabStatsBar>
+    @for (stat of stats; track stat.label) {
+      <div class="collab__stat" #collabStat>
+        <div class="collab__stat-value">{{ stat.value }}</div>
+        <div class="collab__stat-label">{{ stat.label }}</div>
+      </div>
+    }
+  </div>
+  <div class="collab__network">
+    <div class="collab__network-bg"></div>
+    @for (expert of experts; let i = $index; track expert.name) {
+      <img [src]="expert.image" [alt]="expert.name" class="collab__avatar collab__avatar--{{i}}" #collabAvatar />
+    }
+  </div>
+</section> 

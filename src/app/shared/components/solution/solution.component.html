@@ -1,0 +1,45 @@
+<section class="solution">
+  <div class="solution__header" #solutionHeader>
+    <div class="solution__header-bg"></div>
+    <div class="solution__label">WHY MEDIA ALA CARTE?</div>
+    <h2 class="solution__title">
+      Our All <span class="solution__highlight">Solution</span> for<br />Smarter Media Buying
+    </h2>
+  </div>
+  <div class="solution__grid">
+    <!-- First row: main card (colspan=2) and one feature card -->
+    <div class="solution__card solution__card--main" [style.background-image]="'url(' + cards[0].image + ')'" #solutionCard>
+      <div class="solution__main-overlay">
+        <div class="solution__main-desc">{{ cards[0].title }}</div>
+        <button class="solution__main-cta">{{ cards[0].cta }}</button>
+      </div>
+    </div>
+    <div class="solution__card solution__card--feature" [class.solution__card--highlight]="cards[1].highlight" #solutionCard>
+      <img [src]="cards[1].image" alt="Feature Icon" class="solution__feature-img" />
+      <div class="solution__feature-content">
+        <div class="solution__feature-title">{{ cards[1].title }}</div>
+        <div class="solution__feature-desc">{{ cards[1].description }}</div>
+      </div>
+      <div class="solution__arrow-container">
+        <span class="solution__arrow">
+          <span class="solution__arrow-icon">&rarr;</span>
+        </span>
+      </div>
+    </div>
+    <!-- Second row: three feature cards -->
+    @for (card of cards.slice(2); track card.title; let i = $index) {
+      <div class="solution__card solution__card--feature" [class.solution__card--highlight]="card.highlight" #solutionCard>
+        <img [src]="card.image" alt="Feature Icon" class="solution__feature-img" />
+        <div class="solution__feature-content">
+          <div class="solution__feature-title">{{ card.title }}</div>
+          <div class="solution__feature-desc">{{ card.description }}</div>
+        </div>
+        <div class="solution__arrow-container">
+          <span class="solution__arrow">
+            <span class="solution__arrow-icon">&rarr;</span>
+          </span>
+        </div>
+      </div>
+    }
+  </div>
+</section> 

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+:root {
+  --color-bg: #111015;
+  --color-surface: #18171d;
+  --color-primary: #FF4081;
+  --color-accent: #E91E63;
+  --color-text: #fff;
+  --color-muted: #bdbdbd;
+  --color-card: #232129;
+  --color-dark-grey: #7f7c8a;
+  --border-radius: 18px;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  --gradient-pink-primary: #FF1493;
+  --gradient-pink-secondary: #FF0066;
+  --gradient-orange-primary: #FF4500;
+  --gradient-orange-secondary: #FF6347;
+  --gradient-primary: linear-gradient(135deg, var(--gradient-pink-primary) 0%, var(--gradient-orange-primary) 100%);
+  --gradient-primary-hover: linear-gradient(135deg, var(--gradient-pink-secondary) 0%, var(--gradient-orange-secondary) 100%);
+  --shadow-primary-light: rgba(255, 20, 147, 0.10);
+  --shadow-primary-medium: rgba(255, 20, 147, 0.18);
+  --shadow-primary-strong: rgba(255, 20, 147, 0.25);
+  --shadow-primary-intense: rgba(255, 20, 147, 0.35);
+  --shadow-dark: rgba(0, 0, 0, 0.12);
+  --shadow-darker: rgba(0, 0, 0, 0.18);
+}
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Poppins', 'Roboto', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover, a:focus {
+  color: var(--color-accent);
+}
+button {
+  font-family: inherit;
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+button:hover, button:focus {
+  background: var(--color-accent);
+  box-shadow: 0 4px 24px 0 var(--shadow-primary-intense);
+}
+.card {
+  background: var(--color-card);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 16px 0 var(--shadow-dark);
+  padding: 2rem;
+  transition: box-shadow var(--transition);
+}
+.card:hover {
+  box-shadow: 0 6px 32px 0 var(--shadow-primary-medium);
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--color-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}

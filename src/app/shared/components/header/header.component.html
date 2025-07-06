@@ -1,0 +1,41 @@
+<header class="header">
+  <div class="header__logo">
+    <img src="assets/images/logo_color.png" alt="Media Alacarte Logo" />
+  </div>
+  
+  <!-- Navigation -->
+  <nav class="header__nav" [class.mobile-open]="isMobileMenuOpen()">
+    @for (item of navItems(); track item.path; let i = $index) {
+      <a
+        [class.active]="isActive(i)"
+        class="header__nav-link"
+        (click)="setActive(i)"
+        href="#"
+      >
+        {{ item.label }}
+      </a>
+    }
+    
+    <!-- Mobile login button -->
+    <div class="header__mobile-login">
+      <button class="header__login-btn">Login</button>
+    </div>
+  </nav>
+  
+  <!-- Desktop actions -->
+  <div class="header__actions">
+    <button class="header__login-btn">Login</button>
+  </div>
+
+  <!-- Mobile menu button -->
+  <button 
+    class="header__mobile-menu-btn"
+    (click)="toggleMobileMenu()"
+    [class.active]="isMobileMenuOpen()"
+    aria-label="Toggle mobile menu"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>

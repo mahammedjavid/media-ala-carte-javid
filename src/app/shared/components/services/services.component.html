@@ -1,0 +1,40 @@
+<section class="services">
+  <div class="services__header">
+    <span class="services__icon">&#9881;</span>
+    <h2 class="services__title">Our Services</h2>
+  </div>
+  <div class="services__cards">
+    @for (service of services; track service.title; let i = $index) {
+      <div
+        class="services__card"
+        [class.expanded]="isCardExpanded(i)"
+        (mouseenter)="setExpanded(i)"
+        (click)="setExpanded(i)"
+        tabindex="0"
+        (focus)="setExpanded(i)"
+        [style.background-image]="'url(' + service.image + ')'"
+      >
+        <div class="services__card-overlay">
+          @if (isCardExpanded(i)) {
+            <div class="services__card-info">
+              <h3 class="services__card-title">{{ service.title }}</h3>
+              <p class="services__card-desc">{{ service.description }}</p>
+            </div>
+            <div class="services__card-side">
+              <span class="services__card-arrow">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="12" fill="var(--gradient-primary)"/>
+                  <path d="M10 8l4 4-4 4" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          } @else {
+            <div class="services__card-side">
+              <span class="services__card-title rotated">{{ service.title }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section> 
